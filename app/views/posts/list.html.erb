@@ -1,10 +1,8 @@
 <div class="container">
 
-
-  <h1>Posts#list</h1>
 <% @posts.each do |post| %>
-<h3><%= link_to post.title,post_path(id: post.id)%></h3>
-<p><%= post.submitted_by%></p>
+<h3><%= link_to post.title,post.link%></h3>
+<p><b><%= post.submitted_by %></b></p>
 <% end %>
 
 <br>
