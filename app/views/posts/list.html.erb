@@ -1,0 +1,12 @@
+<div class="container">
+
+
+  <h1>Posts#list</h1>
+<% @posts.each do |post| %>
+<h3><%= link_to post.title,post_path(id: post.id)%></h3>
+<p><%= post.submitted_by%></p>
+<% end %>
+
+<br>
+<p class = "add"><%= link_to 'Add New Link', new_post_path %></p>
+</div>
