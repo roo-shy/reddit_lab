@@ -1,10 +1,25 @@
 <div class="container">
+<div class="row">
+  <% @posts.each do |post| %>
 
-<% @posts.each do |post| %>
-<h3><%= link_to post.title,post.link%></h3>
-<p><b><%= post.submitted_by %></b></p>
-<% end %>
+  <div class="col-md-3">
+    <%= link_to upvote_post_path(id: post.id), class: "glyphicon glyphicon-arrow-up" do %>
+    <% end %>
+    <p>
+      <%= post.view_count %>
+    </p>
+    <%= link_to downvote_post_path(id: post.id), class: "glyphicon glyphicon-arrow-down" do %>
+    <% end %>
+  </div>
+  <div class="col-md-9">
 
-<br>
-<p class = "add"><%= link_to 'Add New Link', new_post_path %></p>
+    <h3><%= link_to post.title,post.link%></h3>
+    <p>submitted by
+      <%= post.submitted_by %></p>
+  </div>
+
+  <% end %>
+  <p class="add"><%= link_to 'Add New Link', new_post_path %></p>
+
+</div>
 </div>

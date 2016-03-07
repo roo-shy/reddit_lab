@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   patch 'posts/:id' => 'posts#update'
   delete 'posts/:id' => 'posts#delete'
   post 'posts/:id/comments' => 'posts#create_comment'
-  get 'posts/:id/upvote' => 'posts#upvote_count', as: :upvote
-  patch 'posts/:id/upvote' => 'posts#upvote_count'
-  get 'posts/:id/downvote' => 'posts#downvote_count', as: :downvote
-  patch 'posts/:id/downvote' => 'posts#downvote_count'
+  post 'posts/:id/upvote' => 'posts#upvote', as: :upvote_post
+  post 'posts/:id/downvote' => 'posts#downvote', as: :downvote_post
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
