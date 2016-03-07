@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @post = Post.find_by id: params[:id]
     @post.update view_count: (@post.view_count+1)
    @comment = Comment.new
-   @comment.post = @post
+   @comment.post_id = @post.id
   end
 
   def upvote
