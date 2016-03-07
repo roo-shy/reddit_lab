@@ -1,2 +1,2 @@
-<h1>Posts#detail</h1>
-<p>Find me in app/views/posts/detail.html.erb</p>
+<h1>Post Viewed <%= pluralize @post.view_count,'time' %></h1>
+<%= image_tag @post.photo_url %>

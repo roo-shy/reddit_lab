@@ -3,12 +3,12 @@
   <% @posts.each do |post| %>
 
   <div class="col-md-1">
-    <%= link_to upvote_post_path(id: post.id), class: "glyphicon glyphicon-arrow-up" do %>
+    <%= link_to upvote_post_path(id: post.id), method: :patch, class: "glyphicon glyphicon-arrow-up" do %>
     <% end %>
     <p>
       <%= post.view_count %>
     </p>
-    <%= link_to downvote_post_path(id: post.id), class: "glyphicon glyphicon-arrow-down" do %>
+    <%= link_to downvote_post_path(id: post.id), method: :patch, class: "glyphicon glyphicon-arrow-down" do %>
     <% end %>
   </div>
 
@@ -27,9 +27,6 @@
 
   <% end %>
 
-  <p>
-  <%= link_to "#{pluralize post.comments.count, 'comment'}", post_path(id: post.id) %>
- </p>
 
 </div>
 </div>
