@@ -35,7 +35,7 @@ class PostsController < ApplicationController
      @comment = Comment.new
 
      @comment.comment_text = params[:comment][:comment_text]
-     @comment.author = params[:comment][:user]
+     @comment.user = params[:comment][:user]
      @comment.post_id = @post.id
      # save it
      if @comment.save

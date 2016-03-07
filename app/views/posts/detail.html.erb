@@ -1,2 +1,50 @@
-<h1>Post Viewed <%= pluralize @post.view_count,'time' %></h1>
-<%= image_tag @post.photo_url %>
+<div class="container">
+
+  <h3><%= link_to @post.title, @post.link%></h3>
+  <%= image_tag @post.photo_url, class: "img-responsive" %></br>
+<p>Post Viewed
+  <%= pluralize @post.view_count,'time' %></p>
+
+<form>
+  <%= form_for @comment do |f| %>
+  <div class="form-group">
+    <div class=" <%= 'is-invalid' if @comment.errors[:comment_text].any? %>">
+      <%= f.text_area :comment_text, class:"form-control", placeholder: "Comment" %>
+      <% if @comment.errors[:comment_text].any? %>
+      <span class="">*
+        <%= @comment.errors[:comment_text].join(", ") %>
+      </span>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="<%= 'is-invalid' if @comment.errors[:user].any? %>">
+      <%= f.text_field :user, placeholder: "User" %>
+      <% if @comment.errors[:user].any? %>
+      <span class="">*
+        <%= @comment.errors[:user].join(", ") %>
+      </span>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+  <% end %></br>
+<dl>
+  <% @post.comments.order("id desc").each do |comment| %>
+  <dt>
+    <%= comment.comment_text.upcase %>
+    <br>
+    <small>
+      posted
+      <%= distance_of_time_in_words comment.created_at, Time.now %>
+      ago by
+      <%= comment.user.upcase %>
+    </small>
+  </dt>
+  <% end %>
+</dl>
+</div>

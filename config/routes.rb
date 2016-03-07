@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'posts' => 'posts#create'
   patch 'posts/:id' => 'posts#update'
   delete 'posts/:id' => 'posts#delete'
-  post 'posts/:id/comments' => 'posts#create_comment'
+  post 'posts/:id/comments' => 'posts#create_comment', as: :comments
   get 'posts/:id/upvote' => 'posts#upvote', as: :upvote_post
   patch 'posts/:id/upvote' => 'posts#upvote'
   get 'posts/:id/downvote' => 'posts#downvote', as: :downvote_post
