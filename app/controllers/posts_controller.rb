@@ -5,9 +5,11 @@ class PostsController < ApplicationController
 
   def detail
     @post = Post.find_by id: params[:id]
-    @post.update view_count: (@post.view_count+1)
-   @comment = Comment.new
-   @comment.post_id = @post.id
+    @post.update view_count: (@post.view_count + 1)
+    @post.save
+
+    @comment = Comment.new
+    @comment.post = @post
   end
 
   def upvote
@@ -33,11 +35,10 @@ class PostsController < ApplicationController
   def create_comment
      @post = Post.find_by id: params[:id]
      @comment = Comment.new
-
-     @comment.comment_text = params[:comment][:comment_text]
      @comment.user = params[:comment][:user]
      @comment.post_id = @post.id
-     # save it
+     @comment.comment_text = params[:comment][:comment_text]
+
      if @comment.save
        redirect_to post_path(id: @post.id)
      else

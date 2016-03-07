@@ -9,7 +9,7 @@
 <form>
   <div class="form-group">
     <%= form_for @comment do |f| %>
-    <div class="<%= 'is-invalid' if @comment.errors[:user].any? %>">
+    <div class="<%='is-invalid' if @comment.errors[:user].any? %>">
       <%= f.text_field :user, placeholder: "User" %>
       <% if @comment.errors[:user].any? %>
       <span class="">*
@@ -19,7 +19,7 @@
     </div>
     </div>
     <div class="form-group">
-    <div class=" <%= 'is-invalid' if @comment.errors[:comment_text].any? %>">
+    <div class=" <%='is-invalid' if @comment.errors[:comment_text].any? %>">
       <%= f.text_area :comment_text, class:"form-control", placeholder: "Comment" %>
       <% if @comment.errors[:comment_text].any? %>
       <span class="">*
