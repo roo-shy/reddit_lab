@@ -3,10 +3,7 @@ Rails.application.routes.draw do
 
   get 'posts/:id' => 'posts#detail', as: :post
   get 'posts' => 'posts#new', as: :new_post
-  get 'posts/:id/edit' => 'posts#edit', as: :edit_post
   post 'posts' => 'posts#create'
-  patch 'posts/:id' => 'posts#update'
-  delete 'posts/:id' => 'posts#delete'
   post 'posts/:id/comments' => 'posts#create_comment', as: :comments
   get 'posts/:id/upvote' => 'posts#upvote', as: :upvote_post
   patch 'posts/:id/upvote' => 'posts#upvote'
