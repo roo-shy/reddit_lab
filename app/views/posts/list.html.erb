@@ -21,10 +21,15 @@
     <h3><%= link_to post.title,post.link%></h3>
     <p>submitted by
       <%= post.submitted_by %></p>
+      <p><%= link_to 'Edit', post_path(id: post.id) %></p>
   </div>
 
+
   <% end %>
-  <p class="add"><%= link_to 'Add New Link', new_post_path %></p>
+
+  <p>
+  <%= link_to "#{pluralize post.comments.count, 'comment'}", post_path(id: post.id) %>
+ </p>
 
 </div>
 </div>

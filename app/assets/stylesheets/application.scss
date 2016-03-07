@@ -21,8 +21,25 @@
 }
 
  p {
+    font-family: Arial;
     font-size: 15px;
+    color: #bdc3c7;
+    font-weight: bold;
+    margin-left: 5px;
   }
+
+.glyphicon-arrow-down {
+  font-size: 15px;
+  color: #bdc3c7;
+  font-weight: bold;
+}
+
+.glyphicon-arrow-up {
+  font-size: 15px;
+  color: #bdc3c7;
+  font-weight: bold;
+}
+
   img {
     height: 5em;
   }

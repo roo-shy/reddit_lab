@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.string :submitted_by
       t.string :photo_url
+      t.integer :user_id
 
       t.timestamps null: false
     end
