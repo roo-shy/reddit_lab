@@ -33,8 +33,8 @@ class PostsController < ApplicationController
   end
 
   def create_comment
+    @comment = Comment.new
      @post = Post.find_by id: params[:id]
-     @comment = Comment.new
      @comment.user = params[:comment][:user]
      @comment.post_id = @post.id
      @comment.comment_text = params[:comment][:comment_text]
