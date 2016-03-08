@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     # @comment = Comment.new
     # @post.comment = Comment.find_by id: params[:id]
     # @post.comment_count = @post.comment_count
-    @post.save
+    # @post.save
   end
 
   def detail
