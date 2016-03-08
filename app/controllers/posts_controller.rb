@@ -2,10 +2,6 @@ class PostsController < ApplicationController
   def list
     @posts = Post.all.order("view_count desc")
     @post = Post.find_by id: params[:id]
-    # @comment = Comment.new
-    # @post.comment = Comment.find_by id: params[:id]
-    # @post.comment_count = @post.comment_count
-    # @post.save
   end
 
   def detail
@@ -35,6 +31,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+
   end
 
   def create

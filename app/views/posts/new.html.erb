@@ -20,12 +20,17 @@
           <%= post.text_field :link, class: "form-control" %>
         </div>
 
-
+        <div class="form-group">
+          <%= post.label :photo_url %>
+          <%= post.text_field :photo_url, class: "form-control" %>
+        </div>
 
         <div class="">
           <%= post.submit "Submit Post", class: "btn btn-primary" %>
         </div>
 
       <% end %>
+
+      
     </div>
 </div>
