@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   def list
     @posts = Post.all.order("view_count desc")
+    @post = Post.find_by id: params[:id]
+    # @comment = Comment.new
+    # @post.comment = Comment.find_by id: params[:id]
+    # @post.comment_count = @post.comment_count
+    @post.save
   end
 
   def detail
@@ -13,18 +18,18 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    @posts = Post.all
     @post = Post.find_by id: params[:id]
     @post.view_count += 1
     @post.save
+
     redirect_to root_path
   end
 
   def downvote
-    @posts = Post.all
     @post = Post.find_by id: params[:id]
     @post.view_count -= 1
     @post.save
+
     redirect_to root_path
     end
 
@@ -33,7 +38,7 @@ class PostsController < ApplicationController
   end
 
   def create_comment
-    @comment = Comment.new
+     @comment = Comment.new
      @post = Post.find_by id: params[:id]
      @comment.user = params[:comment][:user]
      @comment.post_id = @post.id
