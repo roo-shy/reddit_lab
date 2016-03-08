@@ -37,6 +37,19 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def create
+    @post = Post.new
+    @post.title = params[:post][:title]
+    @post.user_id = params[:post][:user_id]
+    @post.link = params[:post][:link]
+    if @post.save
+      # redirect to "root"
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   def create_comment
      @comment = Comment.new
      @post = Post.find_by id: params[:id]

@@ -1,2 +1,31 @@
-<h1>Submit New Post</h1>
-  <h1>New Post</h1>
+<div class="container">
+    <div class="details">
+      <h2>Add New Post</h2>
+
+      <% if @post.errors.any? %>
+        <% @post.errors.full_messages.each do |error| %>
+          <p class="alert alert-danger"><strong>Input Error: <%= error %></strong></p>
+        <% end %>
+      <% end %>
+
+      <%= form_for @post do |post| %>
+
+        <div class="form-group">
+          <%= post.label :title %>
+          <%= post.text_field :title, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= post.label :link %>
+          <%= post.text_field :link, class: "form-control" %>
+        </div>
+
+
+
+        <div class="">
+          <%= post.submit "Submit Post", class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
+    </div>
+</div>

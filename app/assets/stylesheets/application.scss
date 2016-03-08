@@ -6,6 +6,7 @@
   background: #CEE3F8;
   max-height: 55px;
   padding-top:5px;
+  padding-right: 5px;
 
 }
 
@@ -42,8 +43,19 @@
 
   img {
     height: 5em;
+
   }
 
 .img-responsive{
   width: 400px;
+}
+
+.outer{
+  display: flex;
+  background-color: #CEE3F8;
+  justify-content: space-between;
+}
+.new{
+  margin-top:10px;
+  padding-right:10px;
 }

@@ -1,0 +1,23 @@
+<div class="container">
+      <h2>Add Username</h2>
+
+      <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |error| %>
+          <p class="alert alert-danger"><strong>Input Error: <%= error %></strong></p>
+        <% end %>
+      <% end %>
+
+      <%= form_for @user do |user| %>
+
+        <div class="form-group">
+          <%= user.label :user_name %>
+          <%= user.text_field :user_name, class: "form-control" %>
+        </div>
+
+        <div class="">
+          <%= user.submit "Register Username", class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
+      <hr>
+</div>
