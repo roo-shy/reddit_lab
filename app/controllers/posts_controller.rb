@@ -39,6 +39,7 @@ class PostsController < ApplicationController
     @post.title = params[:post][:title]
     @post.user_id = params[:post][:user_id]
     @post.link = params[:post][:link]
+    @post.photo_url = params[:post][:photo_url]
     if @post.save
       # redirect to "root"
       redirect_to root_path
