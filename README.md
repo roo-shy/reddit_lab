@@ -1,4 +1,4 @@
-## Microblogging Social Network (Reddit)
+## Microblogging Social Network (Reddit clone)
 
 ### Learning Objectives
 
