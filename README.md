@@ -7,7 +7,7 @@
 - [x] Be able to add custom routes to your resources
 
 
-### A rails app repo with:
+### Rails app repo consists:
   
 - [x] Rails 4.2.4
 
@@ -22,7 +22,7 @@
 - [x] Posts have many comments, which are displayed on the post's show page
 
 
-### This app is a  simple, implementation of Reddit
+### This app is a simple clone of the Reddit app
 
 - [x] The homepage orders by the most number of votes
 
