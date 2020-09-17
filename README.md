@@ -26,11 +26,9 @@
 
 - [x] The homepage orders by the most number of votes
 
-- [x] Clicking on thumbs-up should increment positive vote and redirect you to the home-page
+- [x] Clicking on thumbs-up should increment positive/ negative vote or redirect you to the home-page
 
 - [x] Clicking on the title should redirect you to the post detail page
-
-- [x] When on the post detail page, you should display the comments beneath the
 
 - [x] I can post a comment and type in my username
 
